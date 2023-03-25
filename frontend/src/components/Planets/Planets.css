@@ -1,0 +1,22 @@
+.planets {
+	display: flex;
+    justify-content: space-evenly;
+}
+.planet {
+	/* width: 200px;
+  height: 200px; */
+
+	border-radius: 50%;
+	border: solid;
+}
+.heavenly-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
+}
+
+.sun {
+	background-color: yellow;
+	color: yellow;
+}

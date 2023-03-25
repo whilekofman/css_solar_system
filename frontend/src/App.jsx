@@ -1,15 +1,18 @@
-import { useState } from 'react'
-
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import Planets from "./components/Planets";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [planet, setPlanet] = useState(null);
 
-  return (
-    <div className="App">
-
-    </div>
-  )
+  console.log(planet)
+	return (
+		<div className="App">
+      <Planets planet={planet}/>
+      <NavBar setPlanet={setPlanet}/>
+		</div>
+	);
 }
 
-export default App
+export default App;
