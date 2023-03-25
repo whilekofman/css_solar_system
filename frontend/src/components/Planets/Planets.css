@@ -1,5 +1,6 @@
 .planets {
 	display: flex;
+    justify-content: space-evenly;
 }
 .planet {
 	/* width: 200px;

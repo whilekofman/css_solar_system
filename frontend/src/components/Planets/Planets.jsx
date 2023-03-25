@@ -1,5 +1,4 @@
-const Planets = () => {
-    const sizeSun = 865370;
+const Planets = ({planet}) => {
     const diameters = {
         sun: 865370,
         mercury: 3031,
@@ -12,11 +11,11 @@ const Planets = () => {
         neptune: 30599,
         pluto: 1467.8,
     };
-    
-    const sizeRatio = 200 / diameters.sun;
-    const sizeInPx = diameters.sun * sizeRatio;
+    console.log(planet)
 
-	return (
+    const sizeRatio = 200 / diameters.sun;
+
+	return !planet ? (
 		<div className="planets">
 			{Object.keys(diameters).map((heavenlyBody) => (
 				<div className="heavenly-body">
@@ -30,6 +29,21 @@ const Planets = () => {
 					{heavenlyBody}
 				</div>
 			))}
+		</div>
+	) : (
+		<div className="single-planet">
+			<div className="close">X</div>
+
+			<div className="heavenly-body">
+				<div
+					className={`planet ${planet}`}
+					style={{
+						height: `${diameters[planet] * sizeRatio}px`,
+						width: `${diameters[planet] * sizeRatio}px`,
+					}}
+				></div>
+				{planet}
+			</div>
 		</div>
 	);
 };

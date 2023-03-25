@@ -1,14 +1,16 @@
 import { useState } from "react";
-
 import "./App.css";
+import NavBar from "./components/NavBar";
 import Planets from "./components/Planets";
 
 function App() {
-	const [count, setCount] = useState(0);
+	const [planet, setPlanet] = useState(null);
 
+  console.log(planet)
 	return (
 		<div className="App">
-      <Planets />
+      <Planets planet={planet}/>
+      <NavBar setPlanet={setPlanet}/>
 		</div>
 	);
 }
