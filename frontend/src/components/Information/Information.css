@@ -1,0 +1,35 @@
+.planet-information-container {
+    background-color: rgb(81, 81, 81);
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+  
+.planet-display-container {
+    background-color: rgb(40, 39, 39);
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.planet-text-container {
+    background-color: rgb(51, 51, 51);
+    height: 100%;
+    width: 70%;
+}
+
+.display-planet {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    animation: rotate 60s linear infinite;
+    box-shadow: 0px 0px 20px black;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
