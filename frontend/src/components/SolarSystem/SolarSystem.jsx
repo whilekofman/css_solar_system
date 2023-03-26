@@ -48,6 +48,7 @@ const SolarSystem = ({ planet }) => {
                                 marginTop: `${planets[body][2]}px`,
                                 marginLeft: `${planets[body][1]/2}px`,
                             }}
+                            id={`planet-${body}`}
                         >
                         </div>
                     </div>

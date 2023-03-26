@@ -8,11 +8,11 @@
 }
 
 .sun {
-	background-color: yellow;
-	color: yellow;
+    background: linear-gradient(90deg, rgba(240,70,23,1) 0%, rgba(255,231,26,1) 47%, rgba(238,125,14,1) 100%);
     height: 75px;
     width: 75px;
     border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(255, 119, 0, 0.713);
 }
 
 .planet-container {
@@ -31,10 +31,46 @@
 #neptune {animation: rotate 530s infinite linear;}
 #pluto {animation: rotate 1216s infinite linear;}
 
+#planet-mercury {
+    background: linear-gradient(90deg, rgba(64,49,99,1) 0%, rgba(220,182,133,1) 47%, rgba(83,97,205,1) 100%); 
+    border-color: rgba(220,182,133,1);
+}
+#planet-venus {
+    background: radial-gradient(circle, rgba(149,61,9,1) 0%, rgba(231,211,158,1) 51%, rgba(210,141,65,1) 100%);
+    border-color: rgba(210,141,65,1);
+}
+#planet-earth {
+    background: radial-gradient(circle, rgba(114,233,16,1) 0%, rgba(22,255,2,1) 30%, rgba(0,209,255,1) 48%, rgba(65,91,210,1) 100%);
+    border-color: rgba(64, 64, 245, 0.379);
+}
+#planet-mars {
+    background: radial-gradient(circle, rgba(191,75,41,1) 0%, rgba(224,114,57,1) 30%, rgba(225,137,60,1) 48%, rgba(204,81,37,1) 100%);
+    border-color: rgba(191,75,41,1);
+}
+#planet-jupiter {
+    background: linear-gradient(90deg, rgba(157,82,7,1) 0%, rgba(157,170,170,1) 30%, rgba(161,119,85,1) 48%, rgba(152,130,99,1) 100%);
+    border-color: rgba(152,130,99,1);
+}
+#planet-saturn {
+    background: linear-gradient(90deg, rgba(64,57,94,1) 0%, rgba(165,114,52,1) 47%, rgba(228,176,108,1) 100%);
+    border-color: rgba(152,130,99,1);
+}
+#planet-uranus {
+    background: linear-gradient(90deg, rgba(71,91,98,1) 0%, rgba(189,225,229,1) 38%, rgba(189,225,229,1) 64%, rgba(189,225,229,1) 100%);
+    border-color: rgba(189,225,229,1);
+}
+#planet-neptune {
+    background: linear-gradient(90deg, rgba(33,42,100,1) 0%, rgba(44,61,158,1) 38%, rgba(71,140,221,1) 64%, rgba(52,67,191,1) 100%);
+    border-color: rgba(44,61,158,1);
+}
+#planet-pluto {
+    background: linear-gradient(90deg, rgba(192,167,143,1) 0%, rgba(165,141,130,1) 38%, rgba(199,171,150,1) 64%, rgba(44,6,7,1) 100%);
+    border-color: rgba(199,171,150,1);
+}
+
 .planet {
 	border-radius: 50%;
 	border: solid;
-    background-color: white;
 }
 
 .orbit {
