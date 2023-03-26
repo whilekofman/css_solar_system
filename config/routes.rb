@@ -3,4 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  namespace :api, defaults: { format: :json } do
+    resources :stars, only: [:index]
+    resources :planets, only: [:index, :show]
+    resource  :moons, only: [:index, :show]
+  end
+
 end
