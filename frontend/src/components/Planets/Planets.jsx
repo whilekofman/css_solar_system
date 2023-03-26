@@ -1,4 +1,4 @@
-const Planets = ({planet}) => {
+const Planets = ({ planet, setPlanet }) => {
     const diameters = {
         sun: 865370,
         mercury: 3031,
@@ -25,21 +25,22 @@ const Planets = ({planet}) => {
 							height: `${diameters[heavenlyBody] * sizeRatio}px`,
 							width: `${diameters[heavenlyBody] * sizeRatio}px`,
 						}}
-					></div>
+					>
+
+					</div>
 					{heavenlyBody}
 				</div>
 			))}
 		</div>
 	) : (
 		<div className="single-planet">
-			<div className="close">X</div>
-
+			<div className="close" onClick={() => setPlanet(null)}>X</div>
 			<div className="heavenly-body">
 				<div
-					className={`planet ${planet}`}
+					className={`heavenly-body planet ${planet.toLowerCase()}`}
 					style={{
-						height: `${diameters[planet] * sizeRatio}px`,
-						width: `${diameters[planet] * sizeRatio}px`,
+						height: `${diameters[planet.toLowerCase()] * sizeRatio}px`,
+						width: `${diameters[planet.toLowerCase()] * sizeRatio}px`,
 					}}
 				></div>
 				{planet}

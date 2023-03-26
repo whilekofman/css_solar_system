@@ -6,10 +6,9 @@ import Planets from "./components/Planets";
 function App() {
 	const [planet, setPlanet] = useState(null);
 
-  console.log(planet)
 	return (
 		<div className="App">
-      <Planets planet={planet}/>
+      <Planets planet={planet} setPlanet={setPlanet}/>
       <NavBar setPlanet={setPlanet}/>
 		</div>
 	);
