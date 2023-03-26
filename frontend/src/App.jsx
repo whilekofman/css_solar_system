@@ -8,8 +8,12 @@ function App() {
 
 	return (
 		<div className="App">
-      <Planets planet={planet} setPlanet={setPlanet}/>
-      <NavBar setPlanet={setPlanet}/>
+			<div className="main">
+				<div className="solar-system-container">
+					<Planets planet={planet} setPlanet={setPlanet}/>
+				</div>
+      			<NavBar setPlanet={setPlanet}/>
+			</div>
 		</div>
 	);
 }
