@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Planets from "./components/Planets";
+import SolarSystem from "./components/SolarSystem";
 
 function App() {
 	const [planet, setPlanet] = useState(null);
@@ -10,9 +11,9 @@ function App() {
 		<div className="App">
 			<div className="main">
 				<div className="solar-system-container">
-					<Planets planet={planet} setPlanet={setPlanet}/>
+					<SolarSystem planet={planet}/>
+      				<NavBar setPlanet={setPlanet}/>
 				</div>
-      			<NavBar setPlanet={setPlanet}/>
 			</div>
 		</div>
 	);

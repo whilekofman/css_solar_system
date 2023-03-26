@@ -12,7 +12,7 @@ const Planets = ({ planet, setPlanet }) => {
         pluto: 1467.8,
     };
     console.log(planet)
-
+	
     const sizeRatio = 200 / diameters.sun;
 
 	return !planet ? (

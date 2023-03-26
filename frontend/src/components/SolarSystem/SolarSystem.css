@@ -1,0 +1,51 @@
+.solar-system {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sun {
+	background-color: yellow;
+	color: yellow;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+.planet-container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+#mercury {animation: rotate 1.21s infinite linear;}
+#venus {animation: rotate 3.13s infinite linear;}
+#earth {animation: rotate 5s infinite linear;}
+#mars {animation: rotate 8s infinite linear;}
+#jupiter {animation: rotate 60s infinite linear;}
+#saturn {animation: rotate 150s infinite linear;}
+#uranus {animation: rotate 420s infinite linear;}
+#neptune {animation: rotate 530s infinite linear;}
+#pluto {animation: rotate 1216s infinite linear;}
+
+.planet {
+	border-radius: 50%;
+	border: solid;
+    background-color: white;
+}
+
+.orbit {
+    opacity: .2;
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px;
+    margin-left: -2px;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
