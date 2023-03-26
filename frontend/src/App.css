@@ -1,8 +1,22 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.main {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.solar-system-container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 
