@@ -25,13 +25,13 @@ class Planet < ApplicationRecord
   
     has_many :moons, dependent: :destroy
     
-    validates :name, :num_of_moons, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
-              :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity,
-              :temperature, :star_id, presence: true
+    # validates :name, :num_of_moons, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
+    #           :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity,
+    #           :temperature, :star_id, presence: true
     
-    validates :mass, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
-    :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity, numericality: { greater_than: 0 }
-    validates :num_of_moons, numericality: { greater_than_or_equal_to: 0 }
+    # validates :mass, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
+    # :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity, numericality: { greater_than: 0 }
+    # validates :num_of_moons, numericality: { greater_than_or_equal_to: 0 }
     
     validates :solid, inclusion: { in: [true, false] }
 end  

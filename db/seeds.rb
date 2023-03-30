@@ -21,7 +21,7 @@ ApplicationRecord.transaction do
   
     puts "Creating stars..."
     # Create one user with an easy to remember email and password:
-    Star.create!(
+    the_sun = Star.create!(
         name: "Sun",
         mass: 1.989e30,
         facts: ["The Sun is over 4.5 billion years old.", "Many ancient civilisations thought The Sun was a God.", "Sometimes spots on The Sun erupt and mess with our mobile phone signals."],
@@ -29,5 +29,23 @@ ApplicationRecord.transaction do
         temperature: 5778,
     )
 
+    puts "Creating Planets..."
+    
+    puts "Creating Mercury..."
+    mercury = Planet.create!(
+        name: "Mercury",
+        num_of_moons: 0,
+        diameter_in_mi: 3031.9,
+        distance_from_sun: 36.04,
+        planetary_year: 88,
+        rotation_period: 1408,  #in hours
+        orbital_velocity_in_km_s: 47.36, #km/s
+        solid: 'True',
+        facts: ['some fact'],
+        temperature: 43,
+        star_id: the_sun.id
+    )
+
+   
     puts "Done!"
-  end
+end
