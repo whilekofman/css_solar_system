@@ -62,6 +62,49 @@ ApplicationRecord.transaction do
         temperature_low: -290,
         star_id: the_sun.id
     )
+    earth = Planet.create!(
+        name: "Earth",
+        num_of_moons: 1,
+        diameter_in_mi: 7917.5,
+        distance_from_sun: 92.84,
+        planetary_year: 365, #days
+        rotation_period: 24,  #in hours
+        orbital_velocity_in_km_s: 29.78, #km/s
+        solid: 'True',
+        facts: ['some fact'],
+        temperature_high: 134,
+        temperature_low: -128,
+        star_id: the_sun.id
+    )
+
+    earths_moon = Moon.create!(
+        name: "Moon",
+        diameter_in_mi: 2159,
+        distance_from_planet: 238900,
+        planetary_year: 27.3, #days
+        rotation_period: 655.7,  #in hours
+        orbital_velocity_in_km_s: 1.022, #km/s
+        solid: 'True',
+        facts: ['some fact'],
+        temperature_high: 224,
+        temperature_low: -279,
+        planet_id: earth.id
+    )
+    
+    mars = Planet.create!(
+        name: "Mars",
+        num_of_moons: 2,
+        diameter_in_mi: 4212.3,
+        distance_from_sun: 141.6,
+        planetary_year: 687, #days
+        rotation_period: 24.6,  #in hours
+        orbital_velocity_in_km_s: 24.13, #km/s
+        solid: 'True',
+        facts: ['some fact'],
+        temperature_high: 70,
+        temperature_low: -225,
+        star_id: the_sun.id
+    )
 
    
     puts "Done!"
