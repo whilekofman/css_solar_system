@@ -37,12 +37,29 @@ ApplicationRecord.transaction do
         num_of_moons: 0,
         diameter_in_mi: 3031.9,
         distance_from_sun: 36.04,
-        planetary_year: 88,
+        planetary_year: 88, #days
         rotation_period: 1408,  #in hours
         orbital_velocity_in_km_s: 47.36, #km/s
         solid: 'True',
         facts: ['some fact'],
-        temperature: 43,
+        temperature_high: 800,
+        temperature_low: -290,
+        star_id: the_sun.id
+    )
+    puts "Creating Mercury..."
+
+    venus = Planet.create!(
+        name: "Venus",
+        num_of_moons: 0,
+        diameter_in_mi: 7520.8,
+        distance_from_sun: 66.84,
+        planetary_year: 225, #days
+        rotation_period: 5832,  #in hours
+        orbital_velocity_in_km_s: 35.02, #km/s
+        solid: 'True',
+        facts: ['some fact'],
+        temperature_high: 800,
+        temperature_low: -290,
         star_id: the_sun.id
     )
 
