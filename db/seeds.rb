@@ -307,9 +307,29 @@ ApplicationRecord.transaction do
         orbital_velocity_in_km_s: 9.66, #km/s
         solid: 'False',
         facts: ['While all of the outer solar system gas giants are known to have rings, Saturn is famous for its rings, which are made up of countless particles of ice and rock, ranging in size from tiny grains to giant boulders. The rings are thought to be relatively young, perhaps only a few hundred million years old, and they are constantly changing and evolving.', 'Saturn is the second-largest planet in our solar system, after Jupiter. It is a gas giant, which means it is mostly composed of hydrogen and helium gas.', 'Saturn contains three layers of clouds. The upper layers of ammonia ice have temperatures ranging from minus 280 F (minus 173 C) to minus 170 F (113 C). The next layer contains water ice, with temperatures from minus 127 F (minus 88 C) to 26 F (minus 3 C). Temperatures in the lower layers climb as high as 134 F (57 C).'],
-        temperature_high: 134, #atmospheric temperatures F
-        temperature_low: -288,
+        temperature_high: 21000, #core temperatures F
+        temperature_low: -218,
+        origin_of_name: 'Named after the Roman god of agriculture and wealth',
+        first_discovery: 1610,
+        discovered_by: 'Though the oldest written record of Saturn is dated back to 700 BCE and attributed to the Assyrians, Galileo Galilei is given credit as the first person to observe Saturn through a telescope in 1610.  The Assyrians described the ringed planet as a sparkle in the night and named it "Star of Ninib."  In 400 BCE, Ancient Greek astronomers named the planet Kronos, after their god of agriculture, the Romans would later chang the name to Saturn.',
         star_id: the_sun.id
+    )
+
+    puts "Creating Saturn's moons..."
+    titan = Moon.create!(
+        name: "Titan",
+        diameter_in_mi: 3199.7, #diameter in miles
+        distance_from_planet: 759000, 
+        orbital_period: 15.945, #days
+        rotation_period: 382.8,  #in hours
+        orbital_velocity_in_km_s: 5.57, #km/s
+        facts: ['Titan\'s atmosphere is mostly nitrogen (about 95 percent) and methane (about 5 percent), with small amounts of other carbon-rich compounds. High in Titan\'s atmosphere, methane and nitrogen molecules are split apart by the Sun\'s ultraviolet light and by high-energy particles accelerated in Saturn\'s magnetic field.', 'The pieces of these molecules recombine to form a variety of organic chemicals (substances that contain carbon and hydrogen), and often include nitrogen, oxygen and other elements important to life on Earth. Some of the compounds produced by that splitting and recycling of methane and nitrogen create a kind of smog—a thick, orange-colored haze that makes the moon\'s surface difficult to view from space.', 'The Cassini spacecraft’s numerous gravity measurements of Titan revealed that the moon is hiding an underground ocean of liquid water (likely mixed with salts and ammonia).'],
+        planet_id: saturn.id,
+        temperature_high: -292,
+        temperature_low: -299,
+        origin_of_name: 'Referring to the children of Uranus and Gaea in ancient Greek mythology, Titans were being of unfathomable power responsible for shaping the world.',
+        first_discovery: 1655,
+        discovered_by: 'Christiaan Huygens',
     )
 
     puts "Creating Uranus..."
@@ -322,11 +342,32 @@ ApplicationRecord.transaction do
         rotation_period: 17.2,  #in hours
         orbital_velocity_in_km_s: 6.8, #km/s
         solid: 'False',
-        facts: ['Uranus is the coldest planet in our solar system.', 'It is the only planet whose axis of rotation is tilted sideways, so that it rotates on its side.', 'Uranus is named after the Greek sky deity Uranus, great grandfather of Zeus.'],
-        temperature_high: -371, #atmospheric temperatures F
+        facts: ['Uranus is the coldest planet in our solar system.', 'It is the only planet whose axis of rotation is tilted sideways, so that it rotates on its side.', 'It\'s unique tilt causes the most extreme seasons in the solar system. For nearly a quarter of each Uranian year, the Sun shines directly over each pole, plunging the other half of the planet into a 21-year-long, dark winter.', 'Uranus is also one of just two planets that rotate in the opposite direction than most of the planets (Venus is the other one), from east to west.', 'Uranus is one of two ice giants in the outer solar system (the other is Neptune). Most (80% or more) of the planet\'s mass is made up of a hot dense fluid of "icy" materials water, methane, and ammonia above a small rocky core. Near the core, it heats up to 9,000 degrees Fahrenheit (4,982 degrees Celsius).'],
+        temperature_high: 9000, #atmospheric temperatures F
         temperature_low: -371,
         star_id: the_sun.id
+        origin_of_name: 'Named after the Greek sky deity Uranus, great grandfather of Zeus.',
+        first_discovery: 1781,
+        discovered_by: 'William Herschel',
     )
+
+    puts "Creating Uranus' moons..."
+    miranda = Moon.create!(
+        name: "Miranda",
+        diameter_in_mi: 471.9, #diameter in miles
+        distance_from_planet: 129000, #distance from planets cloud tops in miles
+        orbital_period: 1.413, #days
+        rotation_period: 1.413 * 24,  #in hours
+        orbital_velocity_in_km_s: 23.5, #km/s
+        facts: ['Miranda is the smallest of the Uranian moons, and the least massive.', 'Miranda is the only moon in the Solar System known to have a retrograde orbit, meaning that it orbits in the opposite direction from the planet it orbits.', 'Miranda is the only moon in the Solar System known to have a retrograde orbit, meaning that it orbits in the opposite direction from the planet it orbits.'],
+        planet_id: uranus.id,
+        temperature_high: -371,
+        temperature_low: -371,
+        origin_of_name: 'Miranda is the name of a character in Shakespeare\'s play The Tempest.',
+        first_discovery: 1948,
+        discovered_by: 'Frederick C. Leonard',
+    )
+
 
     puts "Creating Neptune..."
     neptune = Planet.create!(
