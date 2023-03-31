@@ -354,18 +354,18 @@ ApplicationRecord.transaction do
     puts "Creating Uranus' moons..."
     miranda = Moon.create!(
         name: "Miranda",
-        diameter_in_mi: 471.9, #diameter in miles
+        diameter_in_mi: 310.9, #diameter in miles
         distance_from_planet: 129000, #distance from planets cloud tops in miles
         orbital_period: 1.413, #days
         rotation_period: 1.413 * 24,  #in hours
         orbital_velocity_in_km_s: 23.5, #km/s
-        facts: ['Miranda is the smallest of the Uranian moons, and the least massive.', 'Miranda is the only moon in the Solar System known to have a retrograde orbit, meaning that it orbits in the opposite direction from the planet it orbits.', 'Miranda is the only moon in the Solar System known to have a retrograde orbit, meaning that it orbits in the opposite direction from the planet it orbits.'],
+        facts: ['Miranda looks like it was pieced together from parts that didn\'t quite merge properly.', 'The last moon of Uranus to be discovered.', 'The smallest and innermost of Uranus\' five round moons.'],
         planet_id: uranus.id,
         temperature_high: -371,
         temperature_low: -371,
         origin_of_name: 'Miranda is the name of a character in Shakespeare\'s play The Tempest.',
         first_discovery: 1948,
-        discovered_by: 'Frederick C. Leonard',
+        discovered_by: 'Gerard Kuiper',
     )
 
 
@@ -381,8 +381,11 @@ ApplicationRecord.transaction do
         solid: 'False',
         facts: ['Neptune is the only planet in our solar system not visible to the naked eye'],
         temperature_high: -328, #atmospheric temperatures F
-        temperature_low: -360,
-        star_id: the_sun.id
+        temperature_low: -373,
+        star_id: the_sun.id,
+        origin_of_name: 'Named after the Roman god of the sea.',
+        first_discovery: 1846,
+        discovered_by: 'Johann Galle',
     )
 
     puts "Creating Pluto..."
@@ -395,10 +398,13 @@ ApplicationRecord.transaction do
         rotation_period: 153.3,  #in hours
         orbital_velocity_in_km_s: 4.74, #km/s
         solid: 'True',
-        facts: ['Pluto is the smallest planet','Some people do not consider pluto to be a planet'],
+        facts: ['Pluto was once considered the the smallest planet','Some bad people got together and reclassified it as a plantoid.', 'In my heart it will always be a planet, even though it is now considered a dwarf planet.'],
         temperature_high: -342, #atmospheric temperatures F
         temperature_low: -382,
-        star_id: the_sun.id
+        star_id: the_sun.id,
+        origin_of_name: 'Named after the Roman god of the underworld.',
+        first_discovery: 1930,
+        discovered_by: 'Clyde Tombaugh',
     )
     puts "Done!"
 end
