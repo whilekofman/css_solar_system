@@ -44,6 +44,9 @@ ApplicationRecord.transaction do
         facts: ['Mercury is the smallest planet in the solar system.', 'Mercury is the closest planet to the Sun.', 'Mercury is the fastest planet in the solar system.  Being closest to the sun helps!', 'Mercury and Venus are the only planets in our solar system that do not have a moon.'],
         temperature_high: 800,
         temperature_low: -290,
+        origin_of_name: 'Named after the Roman god of commerce and thievery',
+        first_discovery: 1631,
+        discovered_by: 'Thomas Harriott and Galileo Galilei observe Mercury with the newly invented telescope.',
         star_id: the_sun.id
     )
     puts "Creating Venus..."
@@ -57,9 +60,12 @@ ApplicationRecord.transaction do
         rotation_period: 5832,  #in hours
         orbital_velocity_in_km_s: 35.02, #km/s
         solid: 'True',
-        facts: ['Venus is the hottest planet in the solar system.', 'Venus is the second brightest object in the sky after the Moon.', 'Venus is the only planet that rotates clockwise from the perspective of an observer on the surface.', 'Venus has the longest day of any planet in the solar system. It takes 243 Earth days for Venus to rotate once on its axis.'],
+        facts: ['Venus is the hottest planet in the solar system.', 'Venus is the second brightest object in the sky after the Moon.', 'Venus along with Uranus are the only planets that rotate clockwise.', 'Venus has the longest day of any planet in the solar system. It takes 243 Earth days for Venus to rotate once on its axis.'],
         temperature_high: 800,
         temperature_low: -290,
+        origin_of_name: 'Named after the Roman goddess of love and beauty',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei who recognized Venus goes through phases like our moon.',
         star_id: the_sun.id
     )
 
@@ -76,6 +82,7 @@ ApplicationRecord.transaction do
         facts: ['You are on Earth right now.', 'The Earth is the only planet not named after a Greek or Roman deity.', 'The Earth is the densest planet in the solar system.','The Earth is the only planet in our solar system that has the conditions necessary to support life as we know it.'],
         temperature_high: 134,
         temperature_low: -128,
+        origin_of_name: 'Named after the Old English word for the ground',
         star_id: the_sun.id
     )
 
@@ -90,6 +97,9 @@ ApplicationRecord.transaction do
         facts: ['The Moon is Earth\'s only natural satellite.', 'The Moon is the fifth largest natural satellite (there are 200+ moons orbiting planets) in the Solar System.', 'The Moon is the second brightest object in the sky after the Sun.'],
         temperature_high: 224,
         temperature_low: -279,
+        origin_of_name: 'The word moon can be traced to the word mōna, an Old English word from medieval times. Mōna shares its origins with the Latin words metri, which means to measure, and mensis, which means month. So, we see that the moon is called the moon because it is used to measure the months.',
+        first_discovery: 1609,
+        discovered_by: 'Galileo Galilei, though the moon can be seen by the named eye, and has been seen by many cultures throughout history.  Galileo observed the moon with a telescope that was superior to the ones used by his contemporaries.  This allowed Galileo to see the moon\'s craters and mountains in greater detail.',
         planet_id: earth.id
     )
     
@@ -107,6 +117,9 @@ ApplicationRecord.transaction do
         temperature_high: 70,
         temperature_low: -225,
         star_id: the_sun.id
+        origin_of_name: 'Named after the Roman god of war',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei was the first person to observe Mars with a telescope.',
     )
 
     puts "Creating Mars' moons..."
@@ -117,10 +130,13 @@ ApplicationRecord.transaction do
         orbital_period: 0.31891023, #days
         rotation_period: 7.65,  #in hours
         orbital_velocity_in_km_s: 2.138, #km/s
-        facts: ['Phobeos is the larger of Mars\' two moons.', 'Named after the Greek god of fear.', 'Unlike Deimos, Mars\' other moon Phobos orbits a Mars in a retrograde direction.'],
+        facts: ['Phobeos is the larger of Mars\' two moons.', 'Unlike Deimos, Mars\' other moon Phobos orbits a Mars in a retrograde direction.'],
         temperature_high: 25,
         temperature_low: -170,
         planet_id: mars.id
+        origin_of_name: 'Named after the Greek god of fear, and twin brother of Deimos, Mars\'s other moon. ',
+        first_discovery: 1877,
+        discovered_by: 'Asaph Hall, an American astronomer.  He discovered it by using a telescope to observe Mars.  He noticed that Mars had two moons, and named them Phobos and Deimos after the Greek gods of fear and terror.',
     )
 
     deimos = Moon.create!(
@@ -130,27 +146,70 @@ ApplicationRecord.transaction do
         orbital_period: 1.262, #days
         rotation_period: 30.3,  #in hours
         orbital_velocity_in_km_s: 1.351, #km/s
-        facts: ['Deimos is the smaller of Mars\' two moons.', 'Named after the Greek god of terror.', 'Unlike Phobos, Mars\' other moon Deimos orbits a Mars in a prograde direction.'],
+        facts: ['Deimos is the smaller of Mars\' two moons.', 'Unlike Phobos, Mars\' other moon Deimos orbits a Mars in a prograde direction.'],
         temperature_high: 25,
         temperature_low: -170,
         planet_id: mars.id
+        origin_of_name: 'Named after the Greek god of dread, and twin brother of Phobos, Mars\'s other moon. Both are the mythological sons of Ares, the Greek god of war, and Greek counterpart for the Roman god of war, Mars.',
+        first_discovery: 1877,
+        discovered_by: 'Asaph Hall, an American astronomer.  He discovered it by using a telescope to observe Mars.  He noticed that Mars had two moons, and named them Phobos and Deimos after the Greek gods of fear and terror.',
+    )
+
+    puts "Creating Venus..."
+    venus = Planet.create!(
+        name: "Venus",
+        num_of_moons: 0,
+        diameter_in_mi: 7521,
+        distance_from_sun: 67.24,
+        planetary_year: 224.7, #days
+        rotation_period: 243,  #in hours
+        orbital_velocity_in_km_s: 35.02, #km/s
+        solid: 'True',
+        facts: ['Venus is the second planet from the Sun.', 'Venus is the second brightest natural object in the night sky after the Moon.', 'Venus is the hottest planet in the Solar System, with surface temperatures hot enough to melt lead.'],
+        temperature_high: 864,
+        temperature_low: 462,
+        origin_of_name: 'Named after the Roman goddess of love and beauty',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei was the first person to observe Venus with a telescope.',
+        star_id: the_sun.id
+    )
+
+    puts "Creating Mercury..."
+    mercury = Planet.create!(
+        name: "Mercury",
+        num_of_moons: 0,
+        diameter_in_mi: 3031.9,
+        distance_from_sun: 35.98,
+        planetary_year: 88, #days
+        rotation_period: 1407.6,  #in hours
+        orbital_velocity_in_km_s: 47.36, #km/s
+        solid: 'True',
+        facts: ['Mercury is the smallest and innermost planet in the Solar System.', 'Mercury is the fastest planet, zipping around the Sun every 88 Earth days.', 'Mercury is the only planet in our Solar System not to be named after a Greek or Roman deity.'],
+        temperature_high: 800,
+        temperature_low: -290,
+        origin_of_name: 'Named after the Roman god of commerce and messages, Mercury is the messenger of the gods.',
+        first_discovery: 1610,
+
     )
 
 
     puts "Creating Jupiter..."
     jupiter = Planet.create!(
         name: "Jupiter",
-        num_of_moons: 95,
+        num_of_moons: 92,
         diameter_in_mi: 86881,
         distance_from_sun: 460.35,
         planetary_year: 4332.71, #days
         rotation_period: 9.93,  #in hours
         orbital_velocity_in_km_s: 13.06, #km/s
         solid: 'False',
-        facts: ['Jupiter is the biggest planet in our Solar System, and the first of the gas giants.', 'Jupiter is known for having a Great Red Spot, a high pressure region in the atmosphere, producing winds at speeds up to 268 mph and is the largest anticyclonic storm in the solar system', 'Jupiter is named after a Roman God, Jupiter, the king of the gods.'],
+        facts: ['Jupiter is the biggest planet in our Solar System, and the first of the gas giants.', 'Jupiter is known for having a Great Red Spot, a high pressure region in the atmosphere, producing winds at speeds up to 268 mph and is the largest anticyclonic storm in the solar system'],
         temperature_high: 2420, #atmospheric temperatures F
         temperature_low: -166,
         star_id: the_sun.id
+        origin_of_name: 'Named after the Roman god of the sky and thunder, Jupiter is the king of the gods.',
+        first_discovery: 1610,
+        discovered_by: 'While Jupiter has been known since ancient times. Galileo Galilei was the first person to make detailed observations of Jupiter with a telescope.',
     )
 
     puts "Creating Jupiter's moons..."
@@ -165,8 +224,78 @@ ApplicationRecord.transaction do
         temperature_high: 3000, #volcanic temperatures F
         temperature_low: -202, #average surface temperature F
         planet_id: jupiter.id
+        origin_of_name: 'Named after the Greek goddess of the dawn',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei',
     )
-   
+
+    puts "Creating Jupiter's moons..."
+    europa = Moon.create!(
+        name: "Europa",
+        diameter_in_mi: 1939.7, #diameter in miles
+        distance_from_planet: 417000, #distance from planets cloud tops in miles
+        orbital_period: 3.551, #days
+        rotation_period: 85.2,  #in hours
+        orbital_velocity_in_km_s: 13.06, #km/s
+        facts: ['Europa is the smallest of the four Galilean moons of Jupiter.', 'Europa is the sixth-closest moon to Jupiter and the sixth-largest moon in the Solar System. About 90% the size of Earths moon.', 'Europas surface is composed of i.'],
+        planet_id: jupiter.id,
+        temperature_high: -260,
+        temperature_low: -370,
+        origin_of_name: 'Named after the Greek goddess of the dawn',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei',
+    )
+
+    puts "Creating Jupiter's moons..."
+    ganymede = Moon.create!(
+        name: "Ganymede",
+        diameter_in_mi: 3273.5, #diameter in miles
+        distance_from_planet: 665000, #distance from planets cloud tops in miles
+        orbital_period: 7.155, #days
+        rotation_period: 171.8,  #in hours
+        orbital_velocity_in_km_s: 13.06, #km/s
+        facts: ['Ganymede is the largest moon in the Solar System and the largest body in the Solar System that is not a planet. It\'s larger than the planet Mercury', 'Ganymede is the only moon in the Solar System known to have a magnetic field.', 'Ganymede is thought to have a subsurface saltwater ocean. The ocean is thought to have more water than all the water on the Earth\'s surface.'],
+        planet_id: jupiter.id,
+        temperature_high: -171,
+        temperature_low: -297,
+        origin_of_name: 'Named after the Greek god of the winds',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei',
+    )
+
+    puts "Creating Jupiter's moons..."
+    callisto = Moon.create!(
+        name: "Callisto",
+        diameter_in_mi: 2995.4, #diameter in miles
+        distance_from_planet: 1168177.84, #distance from planets cloud tops in miles
+        orbital_period: 16.689, #days
+        rotation_period: 400.8,  #in hours
+        orbital_velocity_in_km_s: 13.06, #km/s
+        facts: ['Callisto is the third-largest moon in the Solar System after Ganymede and Saturns moon Titan.', 'Callisto is 90% of the size of the planet Mercury, but only a third of its mass', 'Callisto is the oldest and most heavily cratered object in the Solar System.'],
+        planet_id: jupiter.id,
+        temperature_high: -162.67,
+        temperature_low: -315.67,
+        origin_of_name: 'Named after the Greek goddess of beauty',
+        first_discovery: 1610,
+        discovered_by: 'Galileo Galilei',
+    )
+    puts 'Creating Jupiters moons...'
+    amalthea = Moon.create!(
+        name: "Amalthea",
+        diameter_in_mi: 103.77, #diameter in miles
+        distance_from_planet: 181000, #distance from planets cloud tops in miles
+        orbital_period: 0.498, #days
+        rotation_period: 24 * .498,  #in hours
+        orbital_velocity_in_km_s: 26.47, #km/s
+        facts: ['Amalthea is extremely irregular, having dimensions of about 270x165x150 kilometers in diameter.', 'The first Jovian moon discovered since Galileo\'s discovery in 1892.', 'Amalthea rotates synchronously with its long, blunt axis pointed towards Jupiter. '],
+        planet_id: jupiter.id,
+        temperature_high: -180.67,
+        temperature_low: -315.67,
+        origin_of_name: 'The name Amalthea is primarily a female name of Greek origin that means To Soothe, Soften. From the Greek "Malthasso" meaning "to soothe, soften." In Greek mythology, Amalthea is a goat who nurses Zeus as a baby.',
+        first_discovery: 1892,
+        discovered_by: 'Edward Emerson Barnard',
+    )
+
     puts "Creating Saturn..."
     saturn = Planet.create!(
         name: "Saturn",
@@ -177,8 +306,8 @@ ApplicationRecord.transaction do
         rotation_period: 10.8,  #in hours
         orbital_velocity_in_km_s: 9.66, #km/s
         solid: 'False',
-        facts: ['Saturn is famous for its rings, which are made up of countless particles of ice and rock ranging in size from tiny grains to giant boulders. The rings are thought to be relatively young, perhaps only a few hundred million years old, and they are constantly changing and evolving.', 'Saturn is the second-largest planet in our solar system, after Jupiter. It is a gas giant, which means it is mostly composed of hydrogen and helium gas.'],
-        temperature_high: 570, #atmospheric temperatures F
+        facts: ['While all of the outer solar system gas giants are known to have rings, Saturn is famous for its rings, which are made up of countless particles of ice and rock, ranging in size from tiny grains to giant boulders. The rings are thought to be relatively young, perhaps only a few hundred million years old, and they are constantly changing and evolving.', 'Saturn is the second-largest planet in our solar system, after Jupiter. It is a gas giant, which means it is mostly composed of hydrogen and helium gas.', 'Saturn contains three layers of clouds. The upper layers of ammonia ice have temperatures ranging from minus 280 F (minus 173 C) to minus 170 F (113 C). The next layer contains water ice, with temperatures from minus 127 F (minus 88 C) to 26 F (minus 3 C). Temperatures in the lower layers climb as high as 134 F (57 C).'],
+        temperature_high: 134, #atmospheric temperatures F
         temperature_low: -288,
         star_id: the_sun.id
     )
@@ -193,7 +322,7 @@ ApplicationRecord.transaction do
         rotation_period: 17.2,  #in hours
         orbital_velocity_in_km_s: 6.8, #km/s
         solid: 'False',
-        facts: ['Uranus is the only planet on its side'],
+        facts: ['Uranus is the coldest planet in our solar system.', 'It is the only planet whose axis of rotation is tilted sideways, so that it rotates on its side.', 'Uranus is named after the Greek sky deity Uranus, great grandfather of Zeus.'],
         temperature_high: -371, #atmospheric temperatures F
         temperature_low: -371,
         star_id: the_sun.id
