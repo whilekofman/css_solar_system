@@ -2,23 +2,21 @@
 #
 # Table name: planets
 #
-#  id                    :bigint           not null, primary key
-#  name                  :string           not null
-#  num_of_moons          :integer          not null
-#  diameter              :float            not null
-#  distance_from_sun     :float            not null
-#  velocity              :float            not null
-#  rotational_velocity   :float            not null
-#  eccentricity          :float            not null
-#  planetary_year        :float            not null
-#  rotation_period       :float            not null
-#  mean_orbital_velocity :float            not null
-#  solid                 :boolean          not null
-#  facts                 :text             default([]), not null, is an Array
-#  temperature           :float            not null
-#  star_id               :bigint           not null
-#  created_at            :datetime         not null
-#  updated_at            :datetime         not null
+#  id                       :bigint           not null, primary key
+#  name                     :string           not null
+#  num_of_moons             :integer          not null
+#  diameter_in_mi           :float            not null
+#  distance_from_sun        :float            not null
+#  planetary_year           :float            not null
+#  rotation_period          :float            not null
+#  orbital_velocity_in_km_s :float            not null
+#  solid                    :boolean          not null
+#  facts                    :text             default([]), not null, is an Array
+#  star_id                  :bigint           not null
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  temperature_high         :float
+#  temperature_low          :float
 #
 class Planet < ApplicationRecord
     belongs_to :star

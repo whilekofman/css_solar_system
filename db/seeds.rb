@@ -46,7 +46,7 @@ ApplicationRecord.transaction do
         temperature_low: -290,
         star_id: the_sun.id
     )
-    puts "Creating Mercury..."
+    puts "Creating Venus..."
 
     venus = Planet.create!(
         name: "Venus",
@@ -62,6 +62,8 @@ ApplicationRecord.transaction do
         temperature_low: -290,
         star_id: the_sun.id
     )
+
+    puts "Creating Earth..."
     earth = Planet.create!(
         name: "Earth",
         num_of_moons: 1,
@@ -77,20 +79,21 @@ ApplicationRecord.transaction do
         star_id: the_sun.id
     )
 
+    puts "Creating Earth's moon..."
     earths_moon = Moon.create!(
         name: "Moon",
         diameter_in_mi: 2159,
         distance_from_planet: 238900,
-        planetary_year: 27.3, #days
+        orbital_period: 27.3, #days
         rotation_period: 655.7,  #in hours
         orbital_velocity_in_km_s: 1.022, #km/s
-        solid: 'True',
         facts: ['some fact'],
         temperature_high: 224,
         temperature_low: -279,
         planet_id: earth.id
     )
     
+    puts "Creating Mars..."
     mars = Planet.create!(
         name: "Mars",
         num_of_moons: 2,
@@ -106,6 +109,84 @@ ApplicationRecord.transaction do
         star_id: the_sun.id
     )
 
+    puts "Creating Jupiter..."
+    jupiter = Planet.create!(
+        name: "Jupiter",
+        num_of_moons: 92,
+        diameter_in_mi: 86881,
+        distance_from_sun: 460.35,
+        planetary_year: 4332.71, #days
+        rotation_period: 9.93,  #in hours
+        orbital_velocity_in_km_s: 13.06, #km/s
+        solid: 'False',
+        facts: ['Jupiter is the biggest planet in our Solar System', 'A day on Jupiter is super fast', 'Jupiter is named after a Roman God'],
+        temperature_high: 2420, #atmospheric temperatures F
+        temperature_low: -166,
+        star_id: the_sun.id
+    )
    
+    puts "Creating Saturn..."
+    saturn = Planet.create!(
+        name: "Saturn",
+        num_of_moons: 83,
+        diameter_in_mi: 72367,
+        distance_from_sun: 911.03, #million miles
+        planetary_year: 10759.50, #days
+        rotation_period: 10.8,  #in hours
+        orbital_velocity_in_km_s: 9.66, #km/s
+        solid: 'False',
+        facts: ['Saturn is famous for its rings, which are made up of countless particles of ice and rock ranging in size from tiny grains to giant boulders. The rings are thought to be relatively young, perhaps only a few hundred million years old, and they are constantly changing and evolving.', 'Saturn is the second-largest planet in our solar system, after Jupiter. It is a gas giant, which means it is mostly composed of hydrogen and helium gas.'],
+        temperature_high: 570, #atmospheric temperatures F
+        temperature_low: -288,
+        star_id: the_sun.id
+    )
+
+    puts "Creating Uranus..."
+    uranus = Planet.create!(
+        name: "Uranus",
+        num_of_moons: 27,
+        diameter_in_mi: 31518,
+        distance_from_sun: 1.8265, #billion miles
+        planetary_year: 30685.00, #days
+        rotation_period: 17.2,  #in hours
+        orbital_velocity_in_km_s: 6.8, #km/s
+        solid: 'False',
+        facts: ['Uranus is the only planet on its side'],
+        temperature_high: -371, #atmospheric temperatures F
+        temperature_low: -371,
+        star_id: the_sun.id
+    )
+
+    puts "Creating Neptune..."
+    neptune = Planet.create!(
+        name: "Neptune",
+        num_of_moons: 14,
+        diameter_in_mi: 30599,
+        distance_from_sun: 2.7796, #billion miles
+        planetary_year: 60190.00, #days
+        rotation_period: 16.1,  #in hours
+        orbital_velocity_in_km_s: 5.44, #km/s
+        solid: 'False',
+        facts: ['Neptune is the only planet in our solar system not visible to the naked eye'],
+        temperature_high: -328, #atmospheric temperatures F
+        temperature_low: -360,
+        star_id: the_sun.id
+    )
+
+    puts "Creating Pluto..."
+    pluto = Planet.create!(
+        name: "Pluto",
+        num_of_moons: 5,
+        diameter_in_mi: 1476.7,
+        distance_from_sun: 3.7, #billion miles
+        planetary_year: 90800, #days
+        rotation_period: 153.3,  #in hours
+        orbital_velocity_in_km_s: 4.74, #km/s
+        solid: 'True',
+        facts: ['Pluto is the smallest planet','Some people do not consider pluto to be a planet'],
+        temperature_high: -342, #atmospheric temperatures F
+        temperature_low: -382,
+        star_id: the_sun.id
+    )
     puts "Done!"
 end
