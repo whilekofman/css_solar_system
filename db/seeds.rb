@@ -116,7 +116,7 @@ ApplicationRecord.transaction do
         facts: ['Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury.', 'Mars is often described as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye.', 'Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'],
         temperature_high: 70,
         temperature_low: -225,
-        star_id: the_sun.id
+        star_id: the_sun.id,
         origin_of_name: 'Named after the Roman god of war',
         first_discovery: 1610,
         discovered_by: 'Galileo Galilei was the first person to observe Mars with a telescope.',
@@ -133,7 +133,7 @@ ApplicationRecord.transaction do
         facts: ['Phobeos is the larger of Mars\' two moons.', 'Unlike Deimos, Mars\' other moon Phobos orbits a Mars in a retrograde direction.'],
         temperature_high: 25,
         temperature_low: -170,
-        planet_id: mars.id
+        planet_id: mars.id,
         origin_of_name: 'Named after the Greek god of fear, and twin brother of Deimos, Mars\'s other moon. ',
         first_discovery: 1877,
         discovered_by: 'Asaph Hall, an American astronomer.  He discovered it by using a telescope to observe Mars.  He noticed that Mars had two moons, and named them Phobos and Deimos after the Greek gods of fear and terror.',
@@ -149,7 +149,7 @@ ApplicationRecord.transaction do
         facts: ['Deimos is the smaller of Mars\' two moons.', 'Unlike Phobos, Mars\' other moon Deimos orbits a Mars in a prograde direction.'],
         temperature_high: 25,
         temperature_low: -170,
-        planet_id: mars.id
+        planet_id: mars.id,
         origin_of_name: 'Named after the Greek god of dread, and twin brother of Phobos, Mars\'s other moon. Both are the mythological sons of Ares, the Greek god of war, and Greek counterpart for the Roman god of war, Mars.',
         first_discovery: 1877,
         discovered_by: 'Asaph Hall, an American astronomer.  He discovered it by using a telescope to observe Mars.  He noticed that Mars had two moons, and named them Phobos and Deimos after the Greek gods of fear and terror.',
@@ -171,7 +171,7 @@ ApplicationRecord.transaction do
         origin_of_name: 'Named after the Roman goddess of love and beauty',
         first_discovery: 1610,
         discovered_by: 'Galileo Galilei was the first person to observe Venus with a telescope.',
-        star_id: the_sun.id
+        star_id: the_sun.id,
     )
 
     puts "Creating Mercury..."
@@ -189,6 +189,7 @@ ApplicationRecord.transaction do
         temperature_low: -290,
         origin_of_name: 'Named after the Roman god of commerce and messages, Mercury is the messenger of the gods.',
         first_discovery: 1610,
+        star_id: the_sun.id,
 
     )
 
@@ -206,7 +207,7 @@ ApplicationRecord.transaction do
         facts: ['Jupiter is the biggest planet in our Solar System, and the first of the gas giants.', 'Jupiter is known for having a Great Red Spot, a high pressure region in the atmosphere, producing winds at speeds up to 268 mph and is the largest anticyclonic storm in the solar system'],
         temperature_high: 2420, #atmospheric temperatures F
         temperature_low: -166,
-        star_id: the_sun.id
+        star_id: the_sun.id,
         origin_of_name: 'Named after the Roman god of the sky and thunder, Jupiter is the king of the gods.',
         first_discovery: 1610,
         discovered_by: 'While Jupiter has been known since ancient times. Galileo Galilei was the first person to make detailed observations of Jupiter with a telescope.',
@@ -223,7 +224,7 @@ ApplicationRecord.transaction do
         facts: ['Io is the most volcanically active body in the Solar System.', 'Io\'s orbit, keeping it at more or less a cozy 262,000 miles (422,000 kilometers) from Jupiter, cuts across the planet\'s powerful magnetic lines of force, thus turning Io into a electric generator. Io can develop 400,000 volts across itself and create an electric current of 3 million amperes.', 'The tidal forces generate a tremendous amount of heat within Io, keeping much of its subsurface crust in liquid form seeking any available escape route to the surface to relieve the pressure. Thus, the surface of Io is constantly renewing itself, filling in any impact craters with molten lava lakes and spreading smooth new floodplains of liquid rock. The composition of this material is not yet entirely clear, but theories suggest that it is largely molten sulfur and its compounds (which would account for the varied coloring) or silicate rock (which would better account for the apparent temperatures, which may be too hot to be sulfur).'], #sourced from solarsystem.nasa.gov
         temperature_high: 3000, #volcanic temperatures F
         temperature_low: -202, #average surface temperature F
-        planet_id: jupiter.id
+        planet_id: jupiter.id,
         origin_of_name: 'Named after the Greek goddess of the dawn',
         first_discovery: 1610,
         discovered_by: 'Galileo Galilei',
@@ -285,7 +286,7 @@ ApplicationRecord.transaction do
         diameter_in_mi: 103.77, #diameter in miles
         distance_from_planet: 181000, #distance from planets cloud tops in miles
         orbital_period: 0.498, #days
-        rotation_period: 24 * .498,  #in hours
+        rotation_period: 24 * 0.498,  #in hours
         orbital_velocity_in_km_s: 26.47, #km/s
         facts: ['Amalthea is extremely irregular, having dimensions of about 270x165x150 kilometers in diameter.', 'The first Jovian moon discovered since Galileo\'s discovery in 1892.', 'Amalthea rotates synchronously with its long, blunt axis pointed towards Jupiter. '],
         planet_id: jupiter.id,
@@ -345,7 +346,7 @@ ApplicationRecord.transaction do
         facts: ['Uranus is the coldest planet in our solar system.', 'It is the only planet whose axis of rotation is tilted sideways, so that it rotates on its side.', 'It\'s unique tilt causes the most extreme seasons in the solar system. For nearly a quarter of each Uranian year, the Sun shines directly over each pole, plunging the other half of the planet into a 21-year-long, dark winter.', 'Uranus is also one of just two planets that rotate in the opposite direction than most of the planets (Venus is the other one), from east to west.', 'Uranus is one of two ice giants in the outer solar system (the other is Neptune). Most (80% or more) of the planet\'s mass is made up of a hot dense fluid of "icy" materials water, methane, and ammonia above a small rocky core. Near the core, it heats up to 9,000 degrees Fahrenheit (4,982 degrees Celsius).'],
         temperature_high: 9000, #atmospheric temperatures F
         temperature_low: -371,
-        star_id: the_sun.id
+        star_id: the_sun.id,
         origin_of_name: 'Named after the Greek sky deity Uranus, great grandfather of Zeus.',
         first_discovery: 1781,
         discovered_by: 'William Herschel',
