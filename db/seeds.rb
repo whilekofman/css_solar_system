@@ -41,7 +41,7 @@ ApplicationRecord.transaction do
         rotation_period: 1408,  #in hours
         orbital_velocity_in_km_s: 47.36, #km/s
         solid: 'True',
-        facts: ['some fact'],
+        facts: ['Mercury is the smallest planet in the solar system.', 'Mercury is the closest planet to the Sun.', 'Mercury is the fastest planet in the solar system.  Being closest to the sun helps!', 'Mercury and Venus are the only planets in our solar system that do not have a moon.'],
         temperature_high: 800,
         temperature_low: -290,
         star_id: the_sun.id
@@ -57,7 +57,7 @@ ApplicationRecord.transaction do
         rotation_period: 5832,  #in hours
         orbital_velocity_in_km_s: 35.02, #km/s
         solid: 'True',
-        facts: ['some fact'],
+        facts: ['Venus is the hottest planet in the solar system.', 'Venus is the second brightest object in the sky after the Moon.', 'Venus is the only planet that rotates clockwise from the perspective of an observer on the surface.', 'Venus has the longest day of any planet in the solar system. It takes 243 Earth days for Venus to rotate once on its axis.'],
         temperature_high: 800,
         temperature_low: -290,
         star_id: the_sun.id
@@ -73,7 +73,7 @@ ApplicationRecord.transaction do
         rotation_period: 24,  #in hours
         orbital_velocity_in_km_s: 29.78, #km/s
         solid: 'True',
-        facts: ['some fact'],
+        facts: ['You are on Earth right now.', 'The Earth is the only planet not named after a Greek or Roman deity.', 'The Earth is the densest planet in the solar system.','The Earth is the only planet in our solar system that has the conditions necessary to support life as we know it.'],
         temperature_high: 134,
         temperature_low: -128,
         star_id: the_sun.id
@@ -87,7 +87,7 @@ ApplicationRecord.transaction do
         orbital_period: 27.3, #days
         rotation_period: 655.7,  #in hours
         orbital_velocity_in_km_s: 1.022, #km/s
-        facts: ['some fact'],
+        facts: ['The Moon is Earth\'s only natural satellite.', 'The Moon is the fifth largest natural satellite (there are 200+ moons orbiting planets) in the Solar System.', 'The Moon is the second brightest object in the sky after the Sun.'],
         temperature_high: 224,
         temperature_low: -279,
         planet_id: earth.id
@@ -103,26 +103,68 @@ ApplicationRecord.transaction do
         rotation_period: 24.6,  #in hours
         orbital_velocity_in_km_s: 24.13, #km/s
         solid: 'True',
-        facts: ['some fact'],
+        facts: ['Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury.', 'Mars is often described as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye.', 'Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'],
         temperature_high: 70,
         temperature_low: -225,
         star_id: the_sun.id
     )
 
+    puts "Creating Mars' moons..."
+    phobos = Moon.create!(
+        name: "Phobos",
+        diameter_in_mi: 14.02, #diameter in miles
+        distance_from_planet: 3700, #distance from planet in miles
+        orbital_period: 0.31891023, #days
+        rotation_period: 7.65,  #in hours
+        orbital_velocity_in_km_s: 2.138, #km/s
+        facts: ['Phobeos is the larger of Mars\' two moons.', 'Named after the Greek god of fear.', 'Unlike Deimos, Mars\' other moon Phobos orbits a Mars in a retrograde direction.'],
+        temperature_high: 25,
+        temperature_low: -170,
+        planet_id: mars.id
+    )
+
+    deimos = Moon.create!(
+        name: "Deimos",
+        diameter_in_mi: 6.2, #diameter in miles
+        distance_from_planet: 14577.37, #distance from planet in miles
+        orbital_period: 1.262, #days
+        rotation_period: 30.3,  #in hours
+        orbital_velocity_in_km_s: 1.351, #km/s
+        facts: ['Deimos is the smaller of Mars\' two moons.', 'Named after the Greek god of terror.', 'Unlike Phobos, Mars\' other moon Deimos orbits a Mars in a prograde direction.'],
+        temperature_high: 25,
+        temperature_low: -170,
+        planet_id: mars.id
+    )
+
+
     puts "Creating Jupiter..."
     jupiter = Planet.create!(
         name: "Jupiter",
-        num_of_moons: 92,
+        num_of_moons: 95,
         diameter_in_mi: 86881,
         distance_from_sun: 460.35,
         planetary_year: 4332.71, #days
         rotation_period: 9.93,  #in hours
         orbital_velocity_in_km_s: 13.06, #km/s
         solid: 'False',
-        facts: ['Jupiter is the biggest planet in our Solar System', 'A day on Jupiter is super fast', 'Jupiter is named after a Roman God'],
+        facts: ['Jupiter is the biggest planet in our Solar System, and the first of the gas giants.', 'Jupiter is known for having a Great Red Spot, a high pressure region in the atmosphere, producing winds at speeds up to 268 mph and is the largest anticyclonic storm in the solar system', 'Jupiter is named after a Roman God, Jupiter, the king of the gods.'],
         temperature_high: 2420, #atmospheric temperatures F
         temperature_low: -166,
         star_id: the_sun.id
+    )
+
+    puts "Creating Jupiter's moons..."
+    io = Moon.create!(
+        name: "Io",
+        diameter_in_mi: 2363.8, #diameter in miles
+        distance_from_planet: 217000, #distance from planets cloud tops in miles
+        orbital_period: 1.769, #days
+        rotation_period: 42.2,  #in hours
+        orbital_velocity_in_km_s: 17.33, #km/s
+        facts: ['Io is the most volcanically active body in the Solar System.', 'Io\'s orbit, keeping it at more or less a cozy 262,000 miles (422,000 kilometers) from Jupiter, cuts across the planet\'s powerful magnetic lines of force, thus turning Io into a electric generator. Io can develop 400,000 volts across itself and create an electric current of 3 million amperes.', 'The tidal forces generate a tremendous amount of heat within Io, keeping much of its subsurface crust in liquid form seeking any available escape route to the surface to relieve the pressure. Thus, the surface of Io is constantly renewing itself, filling in any impact craters with molten lava lakes and spreading smooth new floodplains of liquid rock. The composition of this material is not yet entirely clear, but theories suggest that it is largely molten sulfur and its compounds (which would account for the varied coloring) or silicate rock (which would better account for the apparent temperatures, which may be too hot to be sulfur).'], #sourced from solarsystem.nasa.gov
+        temperature_high: 3000, #volcanic temperatures F
+        temperature_low: -202, #average surface temperature F
+        planet_id: jupiter.id
     )
    
     puts "Creating Saturn..."
