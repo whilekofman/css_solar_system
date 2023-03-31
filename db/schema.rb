@@ -10,45 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_224742) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_30_220240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "moons", force: :cascade do |t|
     t.string "name", null: false
-    t.float "diameter", null: false
+    t.float "diameter_in_mi", null: false
     t.float "distance_from_planet", null: false
     t.text "facts", default: [], null: false, array: true
-    t.float "velocity", null: false
-    t.float "rotational_velocity", null: false
-    t.float "eccentricity", null: false
     t.float "orbital_period", null: false
     t.float "rotation_period", null: false
-    t.float "mean_orbital_velocity", null: false
-    t.float "temperature", null: false
+    t.float "orbital_velocity_in_km_s", null: false
     t.bigint "planet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "temperature_high"
+    t.float "temperature_low"
     t.index ["planet_id"], name: "index_moons_on_planet_id"
   end
 
   create_table "planets", force: :cascade do |t|
     t.string "name", null: false
     t.integer "num_of_moons", null: false
-    t.float "diameter", null: false
+    t.float "diameter_in_mi", null: false
     t.float "distance_from_sun", null: false
-    t.float "velocity", null: false
-    t.float "rotational_velocity", null: false
-    t.float "eccentricity", null: false
     t.float "planetary_year", null: false
     t.float "rotation_period", null: false
-    t.float "mean_orbital_velocity", null: false
+    t.float "orbital_velocity_in_km_s", null: false
     t.boolean "solid", null: false
     t.text "facts", default: [], null: false, array: true
-    t.float "temperature", null: false
     t.bigint "star_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "temperature_high"
+    t.float "temperature_low"
     t.index ["star_id"], name: "index_planets_on_star_id"
   end
 
