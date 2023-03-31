@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_30_220240) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_31_200340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_220240) do
     t.datetime "updated_at", null: false
     t.float "temperature_high"
     t.float "temperature_low"
+    t.string "origin_of_name"
+    t.integer "first_discovery"
+    t.text "discovered_by"
     t.index ["planet_id"], name: "index_moons_on_planet_id"
   end
 
@@ -45,6 +48,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_30_220240) do
     t.datetime "updated_at", null: false
     t.float "temperature_high"
     t.float "temperature_low"
+    t.string "origin_of_name"
+    t.integer "first_discovery"
+    t.text "discovered_by"
     t.index ["star_id"], name: "index_planets_on_star_id"
   end
 
