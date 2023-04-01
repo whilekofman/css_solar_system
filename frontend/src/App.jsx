@@ -26,17 +26,7 @@ function App() {
 		console.log(sunData)
 	}
 
-	
 
-	// export const fetchActivities = () => async (dispatch) => {
-	// 	const res = await csrfFetch("/api/activities/");
-	// 	const data = await res.json();
-	// 	dispatch(retrieveActivities(data));
-	// 	const activityIds = Object.keys(data);
-
-	// 	dispatch(fetchCommentsActivities(activityIds));
-	// 	dispatch(fetchLikesActivities(activityIds));
-	// };
 
 	return (
 		<div className="App">
