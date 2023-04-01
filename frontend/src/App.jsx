@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Planets from "./components/Planets";
@@ -7,9 +7,40 @@ import Information from "./components/Information";
 
 function App() {
 	const [planet, setPlanet] = useState('Sun');
+	const [sunData, setSunData] = useState()
+
+	useEffect(() => {
+		const sunInfo = async () => {
+			const res = await fetch("/api/stars/Sun").then(
+				res => res.json 
+			).then(data => setSunData(data.message))
+			
+			// (setSunData(data))
+		}
+		sunInfo()
+
+	}, [])
+	debugger
+	if(sunData){
+		debugger
+		console.log(sunData)
+	}
+
+	
+
+	// export const fetchActivities = () => async (dispatch) => {
+	// 	const res = await csrfFetch("/api/activities/");
+	// 	const data = await res.json();
+	// 	dispatch(retrieveActivities(data));
+	// 	const activityIds = Object.keys(data);
+
+	// 	dispatch(fetchCommentsActivities(activityIds));
+	// 	dispatch(fetchLikesActivities(activityIds));
+	// };
 
 	return (
 		<div className="App">
+			{sunData &&
 			<div className="main">
 				<div className="solar-system-container">
 					<SolarSystem planet={planet}/>
@@ -17,6 +48,7 @@ function App() {
 				</div>
 				<Information planet={planet} />
 			</div>
+		}
 		</div>
 	);
 }
