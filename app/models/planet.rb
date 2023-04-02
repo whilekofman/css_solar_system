@@ -11,25 +11,28 @@
 #  rotation_period          :float            not null
 #  orbital_velocity_in_km_s :float            not null
 #  solid                    :boolean          not null
-#  facts                    :text             default([]), not null, is an Array
+#  facts                    :text             default([]), not null, array: true
 #  star_id                  :bigint           not null
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  temperature_high         :float
 #  temperature_low          :float
+#  origin_of_name           :string
+#  first_discovery          :integer
+#  discovered_by            :text
 #
+
 class Planet < ApplicationRecord
     belongs_to :star
   
     has_many :moons, dependent: :destroy
-    
-    # validates :name, :num_of_moons, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
-    #           :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity,
-    #           :temperature, :star_id, presence: true
-    
-    # validates :mass, :diameter, :distance_from_sun, :velocity, :rotational_velocity,
-    # :eccentricity, :planetary_year, :rotation_period, :mean_orbital_velocity, numericality: { greater_than: 0 }
-    # validates :num_of_moons, numericality: { greater_than_or_equal_to: 0 }
-    
+  
+    validates :name, :num_of_moons, :diameter_in_mi, :distance_from_sun, :planetary_year,
+              :rotation_period, :orbital_velocity_in_km_s, :solid, :star_id, presence: true
+  
+    validates :num_of_moons, numericality: { greater_than_or_equal_to: 0 }
+    validates :diameter_in_mi, :distance_from_sun, :planetary_year, :rotation_period,
+              :orbital_velocity_in_km_s, numericality: { greater_than: 0 }
+  
     validates :solid, inclusion: { in: [true, false] }
-end  
+  end  
