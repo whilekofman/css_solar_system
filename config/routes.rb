@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :api, defaults: { format: :json } do
-    resources :stars, only: [:index]
+    resources :stars, only: [:index, :show]
     resources :planets, only: [:index, :show]
     resource  :moons, only: [:index, :show]
   end
