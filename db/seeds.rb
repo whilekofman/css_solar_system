@@ -49,6 +49,7 @@ ApplicationRecord.transaction do
         discovered_by: 'Thomas Harriott and Galileo Galilei observe Mercury with the newly invented telescope.',
         star_id: the_sun.id
     )
+
     puts "Creating Venus..."
 
     venus = Planet.create!(
@@ -68,6 +69,8 @@ ApplicationRecord.transaction do
         discovered_by: 'Galileo Galilei who recognized Venus goes through phases like our moon.',
         star_id: the_sun.id
     )
+
+
 
     puts "Creating Earth..."
     earth = Planet.create!(
@@ -155,43 +158,6 @@ ApplicationRecord.transaction do
         discovered_by: 'Asaph Hall, an American astronomer.  He discovered it by using a telescope to observe Mars.  He noticed that Mars had two moons, and named them Phobos and Deimos after the Greek gods of fear and terror.',
     )
 
-    puts "Creating Venus..."
-    venus = Planet.create!(
-        name: "Venus",
-        num_of_moons: 0,
-        diameter_in_mi: 7521,
-        distance_from_sun: 67.24,
-        planetary_year: 224.7, #days
-        rotation_period: 243,  #in hours
-        orbital_velocity_in_km_s: 35.02, #km/s
-        solid: 'True',
-        facts: ['Venus is the second planet from the Sun.', 'Venus is the second brightest natural object in the night sky after the Moon.', 'Venus is the hottest planet in the Solar System, with surface temperatures hot enough to melt lead.'],
-        temperature_high: 864,
-        temperature_low: 462,
-        origin_of_name: 'Named after the Roman goddess of love and beauty',
-        first_discovery: 1610,
-        discovered_by: 'Galileo Galilei was the first person to observe Venus with a telescope.',
-        star_id: the_sun.id,
-    )
-
-    puts "Creating Mercury..."
-    mercury = Planet.create!(
-        name: "Mercury",
-        num_of_moons: 0,
-        diameter_in_mi: 3031.9,
-        distance_from_sun: 35.98,
-        planetary_year: 88, #days
-        rotation_period: 1407.6,  #in hours
-        orbital_velocity_in_km_s: 47.36, #km/s
-        solid: 'True',
-        facts: ['Mercury is the smallest and innermost planet in the Solar System.', 'Mercury is the fastest planet, zipping around the Sun every 88 Earth days.', 'Mercury is the only planet in our Solar System not to be named after a Greek or Roman deity.'],
-        temperature_high: 800,
-        temperature_low: -290,
-        origin_of_name: 'Named after the Roman god of commerce and messages, Mercury is the messenger of the gods.',
-        first_discovery: 1610,
-        star_id: the_sun.id,
-
-    )
 
 
     puts "Creating Jupiter..."

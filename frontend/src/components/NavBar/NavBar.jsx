@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-const NavBar = ({setPlanet}) => {
+const NavBar = ({setPlanet, planetData}) => {
 
     const [selected, setSelected] = useState('Sun');
     const planets = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
     
+    
+
     return (  
         <>
             <div className="nav-bar">
