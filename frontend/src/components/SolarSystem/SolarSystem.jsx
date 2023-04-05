@@ -23,6 +23,7 @@ const SolarSystem = ({ planet }) => {
             </div>
             {Object.keys(planets).map((body) => (
 				<div 
+                    key={body}
                     className="planet-container"
                     style={{
                         height: `${planets[body][1]}px`,
