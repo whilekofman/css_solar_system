@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const NavBar = ({setPlanet, planetData}) => {
+const NavBar = ({ setPlanet, planetData, setSelectedPlanetData }) => {
 
     const [selected, setSelected] = useState('Sun');
-
     const planets = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
     
     return (  
@@ -19,6 +18,7 @@ const NavBar = ({setPlanet, planetData}) => {
                             {
                                 setPlanet(planet.name || 'Sun');
                                 setSelected(planet);
+                                setSelectedPlanetData(planet);
                             }
                         }
                         id={selected === planet ? 'selected' : ''}
